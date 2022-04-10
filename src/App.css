@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: flex;
+  flex-flow: column;
+}
+
+.container__title {
+  text-align: center;
+}
+
+.container__table {
+  margin: auto;
+  text-align: justify;
+  border-collapse: collapse;
+}
+
+.container__table tr {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+}
+
+.container__table tr th {
+  padding: 10px;
+}
+.coin td {
+  padding: 5px;
+}
+.coin_name{
+  display: flex;
+  align-items: center;
+}
+.coin_name img {
+  padding-right: 10px;
+}
+.coin_symbol {
+  padding-left: 10px;
+  color: gray;
+  text-transform: uppercase;
+}
