@@ -10,6 +10,7 @@ body {
 .container {
   display: flex;
   flex-flow: column;
+  padding: 50px;
 }
 
 .container__title {
@@ -20,6 +21,7 @@ body {
   margin: auto;
   text-align: justify;
   border-collapse: collapse;
+  width: 100%;
 }
 
 .container__table tr {
