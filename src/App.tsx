@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const getCoins = async () => {
       if (data.length === 0) {
-        let URL: string = import.meta.env.VITE_API_URL! as string
+        let URL: string = `${import.meta.env.VITE_API_URL}coins/markets?vs_currency=usd&order=market_cap_desc&per_page=20&page=1&sparkline=false`! as string
         const request = await fetch(URL)
         if (request.ok) {
           const response = await request.json()
