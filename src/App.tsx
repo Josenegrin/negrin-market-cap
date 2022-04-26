@@ -26,6 +26,11 @@ function App() {
   let formatterPercent = (percent: Number) => {
     return ` ${percent.toFixed(2)}%`
   }
+
+  let numberFormat = new Intl.NumberFormat('number', {
+    minimumFractionDigits: 1,
+    maximumFractionDigits: 2
+  })
   console.log(data)
   return (
     <div className='container'>
@@ -57,7 +62,7 @@ function App() {
               <td>{formatterPercent(price_change_percentage_14d_in_currency)}</td>
               <td>{formatterPercent(price_change_percentage_30d_in_currency)}</td>
               <td>{formatter.format(market_cap)}</td>
-              <td>{circulating_supply.toFixed(2)}</td>
+              <td>{numberFormat.format(circulating_supply)}</td>
             </tr>
           )
 
