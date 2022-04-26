@@ -40,10 +40,11 @@ function App() {
           <th>14d</th>
           <th>30d</th>
           <th>Capitalización</th>
+          <th>Moneda en circulación</th>
         </tr>
         {data?.length > 0 && data.map((coins) => {
 
-          const { id, symbol, name, image, market_cap, current_price, market_cap_rank, price_change_percentage_24h, price_change_percentage_7d_in_currency, price_change_percentage_14d_in_currency, price_change_percentage_30d_in_currency } = coins
+          const { id, symbol, name, image, market_cap, current_price, market_cap_rank, price_change_percentage_24h, price_change_percentage_7d_in_currency, price_change_percentage_14d_in_currency, price_change_percentage_30d_in_currency, circulating_supply } = coins
 
           return (
             <tr className='coin' key={id}>
@@ -56,6 +57,7 @@ function App() {
               <td>{formatterPercent(price_change_percentage_14d_in_currency)}</td>
               <td>{formatterPercent(price_change_percentage_30d_in_currency)}</td>
               <td>{formatter.format(market_cap)}</td>
+              <td>{circulating_supply.toFixed(2)}</td>
             </tr>
           )
 
