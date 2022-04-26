@@ -23,6 +23,9 @@ function App() {
     style: 'currency',
     currency: 'USD',
   });
+  let formatterPercent = (percent: Number) => {
+    return ` ${percent.toFixed(2)}%`
+  }
   console.log(data)
   return (
     <div className='container'>
@@ -32,11 +35,12 @@ function App() {
           <th>#</th>
           <th>Nombre</th>
           <th>Precio</th>
+          <th>24h</th>
           <th>Capitalización</th>
         </tr>
         {data?.length > 0 && data.map((coins) => {
 
-          const { id, symbol, name, image, market_cap, current_price, market_cap_rank } = coins
+          const { id, symbol, name, image, market_cap, current_price, market_cap_rank, price_change_percentage_24h } = coins
 
           return (
             <tr className='coin' key={id}>
@@ -44,6 +48,8 @@ function App() {
               <td className='coin_name'>
                 <span><img src={image} alt={id} width='25px' height='25px' /></span>{name} <span className='coin_symbol'>{symbol}</span></td>
               <td>{formatter.format(current_price)}</td>
+              <td>{formatterPercent(price_change_percentage_24h)}</td>
+              {/* <td>{price_change_percentage_24h}</td> */}
               <td>{formatter.format(market_cap)}</td>
             </tr>
           )
