@@ -23,22 +23,24 @@ function App() {
     style: 'currency',
     currency: 'USD',
   });
-
+  console.log(data)
   return (
     <div className='container'>
       <h1 className='container__title'>Negrin Market Cap</h1>
       <table className='container__table'>
         <tr>
+          <th>#</th>
           <th>Nombre</th>
           <th>Precio</th>
           <th>Capitalización</th>
         </tr>
         {data?.length > 0 && data.map((coins) => {
 
-          const { id, symbol, name, image, market_cap, current_price } = coins
+          const { id, symbol, name, image, market_cap, current_price, market_cap_rank } = coins
 
           return (
             <tr className='coin' key={id}>
+              <td>{market_cap_rank}</td>
               <td className='coin_name'>
                 <span><img src={image} alt={id} width='25px' height='25px' /></span>{name} <span className='coin_symbol'>{symbol}</span></td>
               <td>{formatter.format(current_price)}</td>
