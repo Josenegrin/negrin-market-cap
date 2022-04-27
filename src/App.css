@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  background-color: #FDFDFE;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -46,4 +47,30 @@ body {
   padding-left: 10px;
   color: gray;
   text-transform: uppercase;
+}
+.cardContainer__container{
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr));
+  gap: 25px;
+}
+.card_container {
+  border-radius: 5px;
+  padding: 20px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  width: 90%;
+}
+.card_container__header{
+  display: flex;
+  align-items: center;
+}
+.card_container__body {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+.card_container__body  > div{
+  display: inherit;
+  align-items: center;
 }
